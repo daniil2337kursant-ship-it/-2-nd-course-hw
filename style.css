@@ -35,6 +35,10 @@ a {
 }
 
 /*фоновые векторы*/
+.header-vector-mobile {
+  display: none;
+}
+
 .header-vector-big {
   position: absolute;
   top: 0;
@@ -103,6 +107,10 @@ a {
   line-height: 32px;
 }
 
+.header-tipe-mini2 {
+  display: none;
+}
+
 .header-button {
   margin-top: 24px;
   width: 247px;
@@ -122,6 +130,10 @@ a {
   color: black;
   background-color: white;
   border: 2px solid black;
+}
+
+.header-button-mobile {
+  display: none;
 }
 
 .header-animation {
@@ -148,6 +160,11 @@ a {
   font-weight: 700;
   padding-right: 50px;
   padding-left: 50px;
+  vertical-align: middle;
+}
+
+.svg-span {
+  vertical-align: middle;
 }
 
 .header-animation_track {
@@ -684,4 +701,180 @@ a {
   color: black;
   background-color: white;
   border: 2px solid black;
+}
+
+@media (max-width: 768px) {
+  .center {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .header-vector-mobile {
+    display: block;
+    top: 0;
+    right: 0;
+    position: absolute;
+  }
+  .header-vector-topmini {
+    transform: scale(0.5);
+    position: absolute;
+    top: 64px;
+    left: 91px;
+  }
+  .header-vector-topcolor {
+    transform: scale(0.5);
+    position: absolute;
+    top: 97px;
+    left: 37px;
+  }
+  .header-vector-mini1 {
+    display: none;
+  }
+  .header-vector-mini2 {
+    display: none;
+  }
+  .header-vector-mini3 {
+    display: none;
+  }
+  .header-vector-big2 {
+    display: none;
+  }
+  .header-vector-big {
+    display: none;
+  }
+  .header-vector-ministar {
+    position: absolute;
+    top: 560px;
+    right: 34px;
+    transform: scale(0.5);
+  }
+  .header-vector-colorstar {
+    position: absolute;
+    top: 537px;
+    right: 87px;
+    transform: scale(0.5);
+  }
+  .header-tipe {
+    width: 343px;
+    padding-top: 147px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .header-tipe-top {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 100%;
+    text-align: center;
+  }
+  .header-tipe-mini {
+    display: none;
+  }
+  .header-tipe-mini2 {
+    display: block;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    text-align: center;
+  }
+  .header-button-mobile {
+    display: block;
+    margin-top: 12px;
+    width: 285px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 60px;
+    border: none;
+    padding: 16px 28px 16px 28px;
+    font-size: 16px;
+    background-color: #202027;
+    color: white;
+    cursor: pointer;
+  }
+  .header-button-mobile:hover {
+    color: white;
+    background-color: #202027;
+    border: none;
+  }
+  .header-button {
+    display: none;
+  }
+  .header-animation {
+    height: 20px;
+  }
+  .track-span {
+    font-size: 16px;
+    font-weight: 700;
+    padding-right: 27px;
+    padding-left: 27px;
+    vertical-align: middle;
+  }
+  .svg-span {
+    transform: scale(0.5);
+    vertical-align: middle;
+  }
+  .game {
+    display: none;
+  }
+  .mini-game-top {
+    font-size: 40px;
+  }
+  .mini-game-one, .mini-game-three, .mini-game-five {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .mini-game-two, .mini-game-four, .mini-game-six {
+    display: flex;
+    flex-direction: column;
+  }
+  .mini-game-six {
+    margin-bottom: 10px;
+  }
+  .mini-game-one {
+    margin-top: 0;
+  }
+  .mini-game-one-picture, .mini-game-two-picture, .mini-game-three-picture, .mini-game-four-picture,
+  .mini-game-five-picture, .mini-game-six-picture {
+    width: 100%;
+    height: 100%;
+  }
+  .mini-game__name {
+    font-size: 32px;
+  }
+  .mini-game__description {
+    font-size: 16px;
+    max-width: 90%;
+  }
+  .mini-game-one-text, .mini-game-two-text, .mini-game-three-text, .mini-game-four-text,
+  .mini-game-five-text, .mini-game-six-text {
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 100%;
+  }
+  .mini-game__button {
+    margin-top: 36px;
+    margin-bottom: 32px;
+    width: 80%;
+    font-size: 16px;
+  }
+  .mini-game__button:hover {
+    color: white;
+    background-color: #202027;
+    border: none;
+  }
+  .mini-game-vector1, .mini-game-vector2, .mini-game-vector3, .mini-game-vector4,
+  .mini-game-vector5 {
+    display: none;
+  }
+  .game-footer-tipe {
+    font-size: 16px;
+  }
+  .game-footer {
+    height: 100px;
+  }
 }/*# sourceMappingURL=style.css.map */

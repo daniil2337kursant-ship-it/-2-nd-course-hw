@@ -33,6 +33,10 @@ a {
     gap: 24px;
 }
 /*фоновые векторы*/
+.header-vector-mobile {
+display: none;
+}
+
 .header-vector-big {
     position: absolute;
     top: 0;
@@ -101,6 +105,10 @@ font-size: 24px;
 line-height: 32px;
 }
 
+.header-tipe-mini2 {
+    display: none;
+}
+
 .header-button {
     margin-top: 24px;
     width: 247px;
@@ -121,6 +129,10 @@ line-height: 32px;
         background-color: white;
 border: 2px solid black;
     }
+}
+
+.header-button-mobile {
+    display: none;
 }
 
 .header-animation {
@@ -148,6 +160,11 @@ border: 2px solid black;
     font-weight: 700;
     padding-right: 50px;
     padding-left: 50px;
+    vertical-align: middle;
+}
+
+.svg-span {
+    vertical-align: middle;
 }
 
 .header-animation_track {
@@ -501,3 +518,4 @@ background-repeat: no-repeat;
 }
 
 @import 'mini-game';
+@import 'mobile';
