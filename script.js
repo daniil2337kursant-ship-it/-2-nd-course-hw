@@ -1,4 +1,4 @@
-/*let a = 10;
+let a = 10;
 alert(a);
 
 a = 20;
@@ -59,7 +59,7 @@ alert(result3);
 let result4 = result3 - number;
 alert(result4);
 
-alert("Ответ 5");*/
+alert("Ответ 5");
 
 let password = "Даниил";
 
