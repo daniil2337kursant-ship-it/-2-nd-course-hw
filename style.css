@@ -784,7 +784,7 @@ a {
   .header-button-mobile {
     display: block;
     margin-top: 12px;
-    width: 285px;
+    width: 70%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -795,6 +795,8 @@ a {
     background-color: #202027;
     color: white;
     cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
   }
   .header-button-mobile:hover {
     color: white;
@@ -854,7 +856,7 @@ a {
   .mini-game-five-text, .mini-game-six-text {
     padding-left: 30px;
     padding-right: 30px;
-    width: 100%;
+    width: 90%;
   }
   .mini-game__button {
     margin-top: 36px;
