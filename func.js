@@ -103,7 +103,7 @@
 //     console.log(circle2.getPerimeter());
 
   
-const game = document.querySelector('#game-four_link');
+const game = document.querySelector('#game-five_link');
 
 const playButton = game.querySelector('.mini-game__button');
 
@@ -163,7 +163,7 @@ console.log(arr2.indexOf(4));
 //Доп задание 3
 const arr3 = [1, 3, 5, 10, 20];
 
-console.log(arr.join(' '));
+console.log(arr3.join(' '));
 
 //Доп задание 4
 
@@ -281,3 +281,242 @@ const averageNumbersSix = sumNumbersSix / randomNumbersSix.length;
 
 console.log('Исходный массив:', randomNumbersSix);
 console.log('Среднее арифметическое:', averageNumbersSix);
+
+
+
+
+// Домашка по Math и Date
+
+
+const gameOne = document.querySelector('#game-one_link');
+
+const playButtonOne = gameOne.querySelector('.mini-game__button');
+
+playButtonOne.addEventListener('click', () => {
+
+    const randomNumber = Math.floor(Math.random() * 100) + 1;
+
+    let answer;
+
+    while (Number(answer) !== randomNumber) {
+
+        answer = prompt("Угадай число от 1 до 100");
+
+        if (answer === null) {
+            alert("Игра отменена!");
+            return;
+        }
+
+        if (Number(answer) < randomNumber) {
+            alert("Загаданное число БОЛЬШЕ!");
+        }
+        else if (Number(answer) > randomNumber) {
+            alert("Загаданное число МЕНЬШЕ!");
+        }
+        else {
+            alert("Поздравляю! Ты угадал число!");
+        }
+
+    }
+
+});
+
+
+
+// Игра "Простая арифметика"
+
+const gameTwo = document.querySelector('#game-two_link');
+
+const playButtonTwo = gameTwo.querySelector('.mini-game__button');
+
+playButtonTwo.addEventListener('click', () => {
+
+    let scoreTwo = 0;
+
+    const operationsTwo = ['+', '-', '*', '/'];
+
+    for (let i = 0; i < operationsTwo.length; i++) {
+
+        const numberOneTwo = Math.floor(Math.random() * 10) + 1;
+        const numberTwoTwo = Math.floor(Math.random() * 10) + 1;
+
+        const operationTwo = operationsTwo[i];
+
+        let correctAnswerTwo;
+
+        if (operationTwo === '+') {
+            correctAnswerTwo = numberOneTwo + numberTwoTwo;
+        }
+        else if (operationTwo === '-') {
+            correctAnswerTwo = numberOneTwo - numberTwoTwo;
+        }
+        else if (operationTwo === '*') {
+            correctAnswerTwo = numberOneTwo * numberTwoTwo;
+        }
+        else {
+            correctAnswerTwo = numberOneTwo / numberTwoTwo;
+        }
+
+        const answerTwo = prompt(
+            `Сколько будет ${numberOneTwo} ${operationTwo} ${numberTwoTwo}?`
+        );
+
+        if (answerTwo === null) {
+            alert('Игра отменена!');
+            return;
+        }
+
+        if (Number(answerTwo) === correctAnswerTwo) {
+            alert('Правильно! Молодец!');
+            scoreTwo++;
+        }
+        else {
+            alert(`Ошибка! Правильный ответ: ${correctAnswerTwo}`);
+        }
+
+    }
+
+    alert(`Игра завершена! Твой результат: ${scoreTwo} из 4`);
+
+});
+
+
+
+// Игра "Переверни текст"
+
+const gameThree = document.querySelector('#game-three_link');
+
+const playButtonThree = gameThree.querySelector('.mini-game__button');
+
+playButtonThree.addEventListener('click', () => {
+
+    const textThree = prompt('Введи текст, который нужно перевернуть:');
+
+    if (textThree === null) {
+        alert('Игра отменена!');
+        return;
+    }
+
+    const reversedTextThree = textThree.split('').reverse().join('');
+
+    alert(`Перевернутый текст: ${reversedTextThree}`);
+
+});
+
+
+//Доп задание 1
+
+const upperCaseTextFour = 'js'.toUpperCase();
+
+console.log(upperCaseTextFour);
+
+//Доп задание 2
+
+function filterStringsFive(arrayFive, searchTextFive) {
+
+    const resultFive = arrayFive.filter((itemFive) => {
+        return itemFive.toLowerCase().startsWith(searchTextFive.toLowerCase());
+    });
+
+    return resultFive;
+}
+
+const wordsFive = ['JavaScript', 'Java', 'Python', 'JSON', 'JQuery'];
+
+console.log(filterStringsFive(wordsFive, 'ja'));
+
+
+//Доп задание 3
+const numberSix = 32.58884;
+console.log(Math.floor(numberSix));
+console.log(Math.ceil(numberSix));
+console.log(Math.round(numberSix));
+
+//Доп задание 4
+
+const numbersSeven = [52, 53, 49, 77, 21, 32];
+console.log(Math.min(...numbersSeven));
+console.log(Math.max(...numbersSeven));
+
+//Доп задание 5
+
+function randomNumberEight() {
+    const randomNumberEightValue = Math.floor(Math.random() * 10) + 1;
+
+    console.log(randomNumberEightValue);
+}
+
+randomNumberEight();
+
+//Доп задание 6
+
+function createRandomArrayNine(numberNine) {
+
+    const randomArrayNine = [];
+
+    for (let i = 0; i < numberNine / 2; i++) {
+        const randomValueNine = Math.floor(Math.random() * (numberNine + 1));
+
+        randomArrayNine.push(randomValueNine);
+    }
+
+    return randomArrayNine;
+}
+
+console.log(createRandomArrayNine(10));
+
+//Доп задание 7
+
+
+function randomInRangeTen(minTen, maxTen) {
+
+    const randomNumberTen = Math.floor(Math.random() * (maxTen - minTen + 1)) + minTen;
+
+    return randomNumberTen;
+}
+
+console.log(randomInRangeTen(5, 20));
+
+//Доп задание 8
+const currentDateEleven = new Date();
+
+console.log(currentDateEleven);
+
+//Доп задание 9
+const currentDateTwelve = new Date();
+
+currentDateTwelve.setDate(currentDateTwelve.getDate() + 73);
+
+console.log(currentDateTwelve);
+
+//Доп задание 10
+
+function formatDateThirteen(dateThirteen) {
+
+    const monthsThirteen = [
+        'января', 'февраля', 'марта', 'апреля',
+        'мая', 'июня', 'июля', 'августа',
+        'сентября', 'октября', 'ноября', 'декабря'
+    ];
+
+    const daysThirteen = [
+        'воскресенье', 'понедельник', 'вторник',
+        'среда', 'четверг', 'пятница', 'суббота'
+    ];
+
+    const dayThirteen = dateThirteen.getDate();
+    const monthThirteen = monthsThirteen[dateThirteen.getMonth()];
+    const yearThirteen = dateThirteen.getFullYear();
+    const weekDayThirteen = daysThirteen[dateThirteen.getDay()];
+
+    const hoursThirteen = String(dateThirteen.getHours()).padStart(2, '0');
+    const minutesThirteen = String(dateThirteen.getMinutes()).padStart(2, '0');
+    const secondsThirteen = String(dateThirteen.getSeconds()).padStart(2, '0');
+
+    return `Дата: ${dayThirteen} ${monthThirteen} ${yearThirteen} — это ${weekDayThirteen}.
+Время: ${hoursThirteen}:${minutesThirteen}:${secondsThirteen}`;
+}
+
+const currentDateThirteen = new Date();
+
+console.log(formatDateThirteen(currentDateThirteen));
