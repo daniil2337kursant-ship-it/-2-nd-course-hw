@@ -520,3 +520,146 @@ function formatDateThirteen(dateThirteen) {
 const currentDateThirteen = new Date();
 
 console.log(formatDateThirteen(currentDateThirteen));
+
+
+
+//Задания по домашке Callback, setTimeout, setInterval
+
+
+const gameFour = document.querySelector('#game-four_link');
+
+const playButtonFour = gameFour.querySelector('.mini-game__button');
+
+playButtonFour.addEventListener('click', () => {
+
+    const choicesFour = ['камень', 'ножницы', 'бумага'];
+
+    const userChoiceFour = prompt('Выбери: камень, ножницы или бумага');
+
+    if (userChoiceFour === null) {
+        alert('Игра отменена!');
+        return;
+    }
+
+    const computerIndexFour = Math.floor(Math.random() * choicesFour.length);
+
+    const computerChoiceFour = choicesFour[computerIndexFour];
+
+    if (!choicesFour.includes(userChoiceFour.toLowerCase())) {
+        alert('Ты ввёл неправильный вариант!');
+        return;
+    }
+
+    alert(`Твой выбор: ${userChoiceFour}\nВыбор компьютера: ${computerChoiceFour}`);
+
+    if (userChoiceFour.toLowerCase() === computerChoiceFour) {
+        alert('Ничья!');
+    }
+    else if (
+        (userChoiceFour.toLowerCase() === 'камень' && computerChoiceFour === 'ножницы') ||
+        (userChoiceFour.toLowerCase() === 'ножницы' && computerChoiceFour === 'бумага') ||
+        (userChoiceFour.toLowerCase() === 'бумага' && computerChoiceFour === 'камень')
+    ) {
+        alert('Поздравляю! Ты победил!');
+    }
+    else {
+        alert('Компьютер победил! Попробуй ещё раз.');
+    }
+
+});
+
+//Доп задание 1
+
+const people = [
+   { name: 'Глеб', age: 29 },
+   { name: 'Анна', age: 17 },
+   { name: 'Олег', age: 7 },
+   { name: 'Оксана', age: 47 }
+];
+
+console.log(people.sort((a, b) => a.age - b.age));
+
+
+
+//Доп задание 2
+
+
+function isPositiveSecond(numberSecond) {
+    return numberSecond > 0;
+}
+
+function isMaleSecond(personSecond) {
+    return personSecond.gender === 'male';
+}
+
+function filterSecond(arraySecond, ruleFunctionSecond) {
+
+    const resultSecond = [];
+
+    for (let i = 0; i < arraySecond.length; i++) {
+
+        if (ruleFunctionSecond(arraySecond[i])) {
+            resultSecond.push(arraySecond[i]);
+        }
+
+    }
+
+    return resultSecond;
+}
+
+console.log(filterSecond([3, -4, 1, 9], isPositiveSecond));
+
+const peopleSecond = [
+    { name: 'Глеб', gender: 'male' },
+    { name: 'Анна', gender: 'female' },
+    { name: 'Олег', gender: 'male' },
+    { name: 'Оксана', gender: 'female' }
+];
+
+console.log(filterSecond(peopleSecond, isMaleSecond));
+
+//Доп задание 3
+
+
+const interval = setInterval(() => {
+    console.log(new Date());
+}, 3000);
+
+setTimeout(() => {
+    clearInterval(interval);
+    console.log('30 секунд прошло');
+}, 30000);
+
+//Доп задание 4
+
+
+function delayForSecond(callback) {
+    setTimeout(callback, 1000);
+}
+
+delayForSecond(function () {
+    console.log('Привет, Глеб!');
+});
+
+
+//Доп задание 5
+
+// Функция delayForSecond через 1 секунду пишет в консоль 
+// «Прошла одна секунда», а затем вызывает переданный колбэк
+function delayForSecond(cb) {
+    setTimeout(() => {
+        console.log('Прошла одна секунда');
+        if(cb) {  cb(); }
+    }, 1000)
+}
+
+// Функция sayHi выводит в консоль приветствие для указанного имени
+function sayHi (name) {
+    console.log(`Привет, ${name}!`);
+}
+
+// Код выше менять нельзя
+
+// Нужно изменить код ниже:
+delayForSecond(() => sayHi('Глеб'))
+
